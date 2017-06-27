@@ -1,4 +1,3 @@
-var test = "hello";
 
 function initMap() {
   var geocoder = new google.maps.Geocoder();
@@ -12,36 +11,31 @@ function geocodeAddress(geocoder, resultsMap) {
   var address = document.getElementById('address').value;
   geocoder.geocode({'address': address}, function(results, status) {
     if (status === 'OK') {
-      getWeatherData(results[0].geometry.location);
+      getCurrentWeatherData(results[0].geometry.location);
     } else {
       alert('Geocode was not successful for the following reason: ' + status);
     }
   });
 }
 
-function getWeatherData(location) {
+function getCurrentWeatherData(location) {
   var lat = location.lat();
   var lng = location.lng();
+  var time = Math.round((Date.now() / 1000) - (365 * 24 * 60 * 60))
+  console.log(time)
   var key = "442cb8009c262b65928a26aa8f86c66b"
-  var url = "https://api.darksky.net/forecast/" + key + "/" + lat + "," + lng + "?callback=?"
-
+  var currentURL = "https://api.darksky.net/forecast/" + key + "/" + lat + "," + lng + "?callback=?";
+  var historicalURL = "https://api.darksky.net/forecast/" + key + "/" + lat + "," + lng + "," + time + "?callback=?";
   $(function() {
 
-    $.getJSON(url, function(data) {
+    $.getJSON(currentURL, function(data) {
       console.log(data);
     });
 
-    // $.ajax({
-    //   type: 'GET',
-    //   url: url,
-    //   success: function(data) {
-    //     console.log("HI");
-    //     console.log(data);
-    //   },
-    //   error: function() {
-    //     alert("Could not get weather data");
-    //   }
-    // });
+    $.getJSON(historicalURL, function(data) {
+      console.log(data);
+    });
 
   });
+
 }
