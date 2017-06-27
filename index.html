@@ -6,15 +6,41 @@
     <meta charset="utf-8">
     <link href="view/style/main.css" rel="stylesheet"></link>
     <script src="model/jquery.js"></script>
-
   </head>
-  <body>
-    <div id="floating-panel">
-      <input id="address" type="textbox" value="Sydney, NSW">
-      <input id="submit" type="button" value="Get Weather">
-    </div>
-    <div id="map"></div>
 
+
+  <body>
+    
+  <div id="search">
+    <input id="address" type="textbox" placeholder="Search.." onkeyup="filterFunction()">
+    <input id="submit" type="button" value="Get Weather">
+    <div id="myDropdown" class="dropdown-content">
+      <a href="#about">About</a>
+      <a href="#base">Base</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+      <a href="#custom">Custom</a>
+      <a href="#support">Support</a>
+      <a href="#tools">Tools</a>
+    </div>
+  </div>
+
+  <div class="weatherDiv">
+    <p>Weather</p>
+    <ul>
+      <li id="temp">Temp: --</li>
+      <li id="summary">Summary: --</li>
+      <li id="wind">Wind Speed: --</li>
+    </ul>
+
+  </div>
+
+
+
+
+
+
+    <script src="Controller/ViewController.js"></script>
     <script src="model/APIClient.js"></script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmQYmvVyXEaQW2ZknFichXWslT_QEiTLg&callback=initMap">
