@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Doug's Weather App</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link href="view/style/main.css" rel="stylesheet"></link>
+    <script src="model/jquery.js"></script>
+
+  </head>
+  <body>
+    <div id="floating-panel">
+      <input id="address" type="textbox" value="Sydney, NSW">
+      <input id="submit" type="button" value="Get Weather">
+    </div>
+    <div id="map"></div>
+    <script type="text/javascript">
+      $(function() {
+        $.getJSON("https://api.darksky.net/forecast/442cb8009c262b65928a26aa8f86c66b/42.3601,-71.0589?callback=?", function(data) {
+            console.log(data)
+        });
+      });
+
+
+
+    </script>
+    <script src="model/GoogleMapsAPI.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmQYmvVyXEaQW2ZknFichXWslT_QEiTLg&callback=initMap">
+    </script>
+
+  </body>
+</html>
