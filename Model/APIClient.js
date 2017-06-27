@@ -1,3 +1,5 @@
+ 
+
 function initMap() {
   var geocoder = new google.maps.Geocoder();
 
@@ -28,11 +30,23 @@ function getCurrentWeatherData(location) {
   $(function() {
 
     $.getJSON(currentURL, function(data) {
+      var hourlyData = data.hourly.data
+      var searchedLoaction = document.getElementById('address').value;
       var icon = data.currently.icon;
-      var temp = data.currently.temperature;
+      var temp = Math.round(data.currently.temperature);
       var summary = data.currently.summary;
-      var windSpeed = data.currently.windSpeed;
-      $("#mainIcon").attr("src", "icons/" + icon + ".png");
+      var windSpeed = Math.round(data.currently.windSpeed);
+
+      $.each(hourlyData, function(index, value) {
+        if (index < 11) {
+          console.log(index);
+          $("#hourlyIcon" + index).attr("src", "icons/" + value.icon + ".png");
+          $("#hourlyTemp" + index).html(Math.round(value.temperature) + " °F");
+        }
+      });
+
+      $('#currentHeader').html("Current Weather For " + searchedLoaction);
+      $('#mainIcon').attr("src", "icons/" + icon + ".png");
       $('#current-weather #temp').html(temp + " °F");
       $('#current-weather #summary').html(summary)
       $('#current-weather #wind').html(windSpeed + "mph winds")
