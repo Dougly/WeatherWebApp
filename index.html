@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>Doug's Weather App</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <link href="view/style/main.css" rel="stylesheet"></link>
     <script src="model/jquery.js"></script>
@@ -16,17 +15,12 @@
     <input id="submit" type="button" value="Get Weather">
     <div id="myDropdown" class="dropdown-content">
       <a href="#about">About</a>
-      <a href="#base">Base</a>
-      <a href="#blog">Blog</a>
-      <a href="#contact">Contact</a>
-      <a href="#custom">Custom</a>
-      <a href="#support">Support</a>
-      <a href="#tools">Tools</a>
     </div>
   </div>
-
+ 
   <div>
     <p>Current Weather</p>
+    <img src="icons/clear-day.png" id="mainIcon" class="weather-icon">
     <ul id="current-weather">
       <li id="temp">Temp: --</li>
       <li id="summary">Summary: --</li>

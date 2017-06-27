@@ -28,12 +28,12 @@ function getCurrentWeatherData(location) {
   $(function() {
 
     $.getJSON(currentURL, function(data) {
+      var icon = data.currently.icon;
       var temp = data.currently.temperature;
       var summary = data.currently.summary;
       var windSpeed = data.currently.windSpeed;
-
-      console.log(temp);
-      $('#current-weather #temp').html(temp + " degrees F");
+      $("#mainIcon").attr("src", "icons/" + icon + ".png");
+      $('#current-weather #temp').html(temp + " °F");
       $('#current-weather #summary').html(summary)
       $('#current-weather #wind').html(windSpeed + "mph winds")
     });
