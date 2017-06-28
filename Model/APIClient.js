@@ -1,8 +1,22 @@
 $(function() {
+  $.each(localStorage, function(key, value) {
+    var ul = document.getElementById("historyList");
+    var li = document.createElement("li");
+    li.setAttribute("id", key);
+    li.setAttribute("class", "historyItem");
+    li.appendChild(document.createTextNode(key));
+    ul.appendChild(li);
+  });
+
+  $(".historyItem").on("click", function() {
+    var $id = $(this).attr('id');
+    var textField = document.getElementById('address');
+    textField.setAttribute("value", $id);
+  });
+
+
   $("#clear-history").on("click", function() {
-    console.log("hi");
     localStorage.clear();
-    populateHistoryList();
     var myList = document.getElementById('historyList');
     myList.innerHTML = '';
   });
@@ -73,22 +87,23 @@ function getCurrentWeatherData(location) {
 }
 
 function addToSearchHistory(place) {
-  var ul = document.getElementById("historyList");
-  var li = document.createElement("li");
-  li.appendChild(document.createTextNode(place));
-  ul.appendChild(li);
-}
+  var inHistory = false;
+  $.each(localStorage, function(key, value) {
+    if (key === place) {
+      inHistory = true;
+    }
+  });
 
-
-function populateHistoryList() {
-  for (var i = localStorage.length - 1; i >= 0; i--) {
-    var pastSearch = localStorage.key[i];
-    addToSearchHistory(pastSearch)
+  if (inHistory === false) {
+    localStorage.setItem(place, "");
+    var ul = document.getElementById("historyList");
+    var li = document.createElement("li");
+    li.setAttribute("id", place);
+    li.setAttribute("class", "historyItem");
+    li.appendChild(document.createTextNode(place));
+    ul.appendChild(li);
   }
 }
-
-
-
 
 
 function convertTimestamp(timestamp) {
@@ -108,9 +123,7 @@ function convertTimestamp(timestamp) {
     h = 12;
   }
   
-  // ie: 2013-02-18, 8:35 AM  
-  time = h + ampm;
-    
+  time = h + ampm; 
   return time;
 }
 
