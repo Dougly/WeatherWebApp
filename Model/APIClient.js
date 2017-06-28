@@ -1,6 +1,4 @@
- 
-
-function initMap() {
+ function initMap() {
   var geocoder = new google.maps.Geocoder();
 
   document.getElementById('submit').addEventListener('click', function() {
@@ -39,7 +37,7 @@ function getCurrentWeatherData(location) {
 
       $.each(hourlyData, function(index, value) {
         if (index < 11) {
-          console.log(index);
+          $("#hr" + index).html(convertTimestamp(value.time));
           $("#hourlyIcon" + index).attr("src", "icons/" + value.icon + ".png");
           $("#hourlyTemp" + index).html(Math.round(value.temperature) + " °F");
         }
@@ -53,9 +51,35 @@ function getCurrentWeatherData(location) {
     });
 
     $.getJSON(historicalURL, function(data) {
+
       console.log(data);
     });
 
   });
 
 }
+
+function convertTimestamp(timestamp) {
+  var d = new Date(timestamp * 1000), // Convert the passed timestamp to milliseconds
+    hh = d.getHours(),
+    h = hh,
+    ampm = 'AM',
+    time;
+      
+  if (hh > 12) {
+    h = hh - 12;
+    ampm = 'PM';
+  } else if (hh === 12) {
+    h = 12;
+    ampm = 'PM';
+  } else if (hh == 0) {
+    h = 12;
+  }
+  
+  // ie: 2013-02-18, 8:35 AM  
+  time = h + ampm;
+    
+  return time;
+}
+
+

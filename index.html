@@ -12,9 +12,6 @@
     <div id="search">
       <input id="address" type="textbox" placeholder="Search.." onkeyup="filterFunction()">
       <input id="submit" type="button" value="Get Weather">
-      <div id="myDropdown" class="dropdown-content">
-        <a href="#about">About</a>
-      </div>
     </div>
    
     <div>
@@ -28,104 +25,65 @@
     </div>
 
     <div>
-    <p>Hourly Forecast</p>
-      <ul>
+    <h3>Hourly Forecast</h3>
+      <ul id="hourlyUL">
         <li class="hourly">
-          <div>
-          <img src="icons/clear-day.png" id="hourlyIcon0" class="hourly-icon">
-          </div>
-          <div>
-          <b id="hourlyTemp0" class="hourlyTemp">0°F</b>
-          </div>
+          <div id="hr0", class="hourlyTemp">7pm</div>
+          <div><img src="icons/clear-day.png" id="hourlyIcon0" class="hourly-icon"></div>
+          <div id="hourlyTemp0" class="hourlyTemp">0°F</div>
         </li>
         <li class="hourly">
-          <div>
-          <img src="icons/clear-day.png" id="hourlyIcon1" class="hourly-icon">
-          </div>
-          <div>
-          <b id="hourlyTemp1" class="hourlyTemp">0°F</b>
-          </div>
+          <div id="hr1", class="hourlyTemp">7pm</div>
+          <div><img src="icons/clear-day.png" id="hourlyIcon1" class="hourly-icon"></div>
+          <div id="hourlyTemp1" class="hourlyTemp">0°F</div>
         </li>
         <li class="hourly">
-          <div>
-          <img src="icons/clear-day.png" id="hourlyIcon2" class="hourly-icon">
-          </div>
-          <div>
-          <b id="hourlyTemp2" class="hourlyTemp">0°F</b>
-          </div>
+          <div id="hr2", class="hourlyTemp">7pm</div>
+          <div><img src="icons/clear-day.png" id="hourlyIcon2" class="hourly-icon"></div>
+          <div id="hourlyTemp2" class="hourlyTemp">0°F</div>
         </li>
         <li class="hourly">
-          <div>
-          <img src="icons/clear-day.png" id="hourlyIcon3" class="hourly-icon">
-          </div>
-          <div>
-          <b id="hourlyTemp3" class="hourlyTemp">0°F</b>
-          </div>
+          <div id="hr3", class="hourlyTemp">7pm</div>
+          <div><img src="icons/clear-day.png" id="hourlyIcon3" class="hourly-icon"></div>
+          <div id="hourlyTemp3" class="hourlyTemp">0°F</div>
         </li>
         <li class="hourly">
-          <div>
-          <img src="icons/clear-day.png" id="hourlyIcon4" class="hourly-icon">
-          </div>
-          <div>
-          <b id="hourlyTemp4" class="hourlyTemp">0°F</b>
-          </div>
+          <div id="hr4", class="hourlyTemp">7pm</div>
+          <div><img src="icons/clear-day.png" id="hourlyIcon4" class="hourly-icon"></div>
+          <div id="hourlyTemp4" class="hourlyTemp">0°F</div>
         </li>
         <li class="hourly">
-          <div>
-          <img src="icons/clear-day.png" id="hourlyIcon5" class="hourly-icon">
-          </div>
-          <div>
-          <b id="hourlyTemp5" class="hourlyTemp">0°F</b>
-          </div>
+          <div id="hr5", class="hourlyTemp">7pm</div>
+          <div><img src="icons/clear-day.png" id="hourlyIcon5" class="hourly-icon"></div>
+          <div id="hourlyTemp5" class="hourlyTemp">0°F</div>
         </li>
         <li class="hourly">
-          <div>
-          <img src="icons/clear-day.png" id="hourlyIcon6" class="hourly-icon">
-          </div>
-          <div>
-          <b id="hourlyTemp6" class="hourlyTemp">0°F</b>
-          </div>
+          <div id="hr6", class="hourlyTemp">7pm</div>
+          <div><img src="icons/clear-day.png" id="hourlyIcon6" class="hourly-icon"></div>
+          <div id="hourlyTemp6" class="hourlyTemp">0°F</div>
         </li>
         <li class="hourly">
-          <div>
-          <img src="icons/clear-day.png" id="hourlyIcon7" class="hourly-icon">
-          </div>
-          <div>
-          <b id="hourlyTemp7" class="hourlyTemp">0°F</b>
-          </div>
+          <div id="hr7", class="hourlyTemp">7pm</div>
+          <div><img src="icons/clear-day.png" id="hourlyIcon7" class="hourly-icon"></div>
+          <div id="hourlyTemp7" class="hourlyTemp">0°F</div>
         </li>
         <li class="hourly">
-          <div>
-          <img src="icons/clear-day.png" id="hourlyIcon8" class="hourly-icon">
-          </div>
-          <div>
-          <b id="hourlyTemp8" class="hourlyTemp">0°F</b>
-          </div>
+          <div id="hr8", class="hourlyTemp">7pm</div>
+          <div><img src="icons/clear-day.png" id="hourlyIcon8" class="hourly-icon"></div>
+          <div id="hourlyTemp8" class="hourlyTemp">0°F</div>
         </li>
         <li class="hourly">
-          <div>
-          <img src="icons/clear-day.png" id="hourlyIcon9" class="hourly-icon">
-          </div>
-          <div>
-          <b id="hourlyTemp9" class="hourlyTemp">0°F</b>
-          </div>
+          <div id="hr9", class="hourlyTemp">7pm</div>
+          <div><img src="icons/clear-day.png" id="hourlyIcon9" class="hourly-icon"></div>
+          <div id="hourlyTemp9" class="hourlyTemp">0°F</div>
         </li>
         <li class="hourly">
-          <div>
-          <img src="icons/clear-day.png" id="hourlyIcon10" class="hourly-icon">
-          </div>
-          <div>
-          <b id="hourlyTemp10" class="hourlyTemp">0°F</b>
-          </div>
-        </li>
-        
+          <div id="hr10", class="hourlyTemp">7pm</div>
+          <div><img src="icons/clear-day.png" id="hourlyIcon10" class="hourly-icon"></div>
+          <div id="hourlyTemp10" class="hourlyTemp">0°F</div>
         </li>
       </ul>
     </div>
-
-
-
-
 
 
     <script src="Controller/ViewController.js"></script>
