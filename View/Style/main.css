@@ -1,3 +1,10 @@
+div {
+  clear: left;
+}
+
+br {
+  clear: left;
+}
 .weather-icon {
   width: 150px;
   height: 150px;

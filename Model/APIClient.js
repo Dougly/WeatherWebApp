@@ -1,4 +1,4 @@
- function initMap() {
+function initMap() {
   var geocoder = new google.maps.Geocoder();
 
   document.getElementById('submit').addEventListener('click', function() {
@@ -47,12 +47,19 @@ function getCurrentWeatherData(location) {
       $('#mainIcon').attr("src", "icons/" + icon + ".png");
       $('#current-weather #temp').html(temp + " °F");
       $('#current-weather #summary').html(summary)
-      $('#current-weather #wind').html(windSpeed + "mph winds")
+      $('#current-weather #wind').html(windSpeed + " mph winds")
     });
 
     $.getJSON(historicalURL, function(data) {
+      var icon = data.currently.icon;
+      var temp = Math.round(data.currently.temperature);
+      var summary = data.currently.summary;
+      var windSpeed = Math.round(data.currently.windSpeed);
 
-      console.log(data);
+      $('#pastIcon').attr("src", "icons/" + icon + ".png");
+      $('#past-weather #pastTemp').html(temp + " °F");
+      $('#past-weather #pastSummary').html(summary)
+      $('#past-weather #pastWind').html(windSpeed + " mph winds")
     });
 
   });

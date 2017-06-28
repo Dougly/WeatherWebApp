@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
   <head>
     <title>Doug's Weather App</title>
@@ -6,7 +7,6 @@
     <link href="view/style/main.css" rel="stylesheet"></link>
     <script src="model/jquery.js"></script>
   </head>
-
 
   <body>
     <div id="search">
@@ -24,9 +24,10 @@
         <li id="wind"></li>
       </ul>
     </div>
+    </br>
 
     <div>
-    <h3>Hourly Forecast</h3>
+    <h3>Hourly Forecast:</h3>
       <ul class="hourlyList">
         <li class="hourly">
           <div id="hr0", class="hourlyTemp"></div>
@@ -83,6 +84,18 @@
           <div><img src="" alt="n/a" id="hourlyIcon10" class="hourly-icon"></div>
           <div id="hourlyTemp10" class="hourlyTemp"></div>
         </li>
+      </ul>
+    </div>
+    
+    </br>
+
+    <div>
+      <h3 id="pastHeader">Conditions One Year Ago:</h3>
+      <img src="" alt="n/a" id="pastIcon" class="weather-icon">
+      <ul id="past-weather" class="currentList">
+        <li id="pastTemp"></li>
+        <li id="pastSummary"></li>
+        <li id="pastWind"></li>
       </ul>
     </div>
 
